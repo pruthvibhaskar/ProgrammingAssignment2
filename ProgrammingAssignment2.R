@@ -1,4 +1,5 @@
-#Matrix to catch the Inverse
+## functions that cache the inverse of a matrix.
+## This function creates a "matrix"  that can cache its inverse.
 makeCacheMatrix <- function(x = matrix())
 {
   inv <- NULL
@@ -21,7 +22,7 @@ makeCacheMatrix <- function(x = matrix())
        setInverse = setInverse, getInverse = getInverse)
 }
 
-#Matrix to compute the Inverse
+#function to compute the Inverse of a Matrix
 cacheSolve <- function(x,...)
 {
   inv <- x$getInverse()
