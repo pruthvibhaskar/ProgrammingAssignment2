@@ -1,16 +1,16 @@
 #Matrix to catch Inverse
 makeCacheMatrix <- function(x = matrix())
 {
-  inv <- NULL
+  mat_inv <- NULL
   set <- function(y)
   {
     x <<- y
-    inv <<- NULL
+    mat_inv <<- NULL
   }
   get <- function() x
   setInverse <- function(inverse)
   {
-    inv <<- inverse
+    mat_inv <<- inverse
   }
   getInverse <- function() inv
   list(set = set, get = get,
@@ -21,14 +21,14 @@ makeCacheMatrix <- function(x = matrix())
 #Matrix to compute Inverse
 cacheSolve <- function(x,...)
 {
-  inv <- x$getInverse()
+  mat_inv <- x$getInverse()
   if(!is.null(inv))
   {
     message("getting catched data")
     return(inv)
   }
   mat <- x$get()
-  inv <- solve(mat,...)
-  x$setInverse(inv)
-  inv
+  mat_inv <- solve(mat,...)
+  x$setInverse(mat_inv)
+  mat_inv
 }
